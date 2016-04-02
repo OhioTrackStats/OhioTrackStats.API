@@ -1,9 +1,9 @@
-﻿CREATE TABLE `player` (
+﻿CREATE TABLE `stat` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(45) NOT NULL,
-  `lastName` varchar(45) NOT NULL,
-  `graduationYear` int(11) NOT NULL,
-  `gender` bit NOT NULL,
+  `playerId` INT NOT NULL,
+  `eventId` INT NOT NULL,
+  `time` DECIMAL(8,2),
+  `distance` DECIMAL(8,2),
   `dateInserted` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `dateUpdated` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
