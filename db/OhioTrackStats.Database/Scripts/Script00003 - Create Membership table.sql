@@ -1,7 +1,7 @@
-﻿CREATE TABLE `ohiotrackstats`.`team` (
+﻿CREATE TABLE `ohiotrackstats`.`membership` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `city` VARCHAR(45) NOT NULL,
+  `playerId` INT NOT NULL,
+  `schoolId` INT NOT NULL,
   `dateInserted` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `dateUpdated` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)

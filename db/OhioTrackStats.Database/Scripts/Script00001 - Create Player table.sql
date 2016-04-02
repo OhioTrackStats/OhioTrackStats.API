@@ -1,6 +1,9 @@
-﻿CREATE TABLE `ohiotrackstats`.`player` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `firstName` VARCHAR(45) NOT NULL,
-  `lastName` VARCHAR(45) NOT NULL,
-  `graduationYear` INT NOT NULL,
-  PRIMARY KEY (`id`));
+﻿CREATE TABLE `player` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(45) NOT NULL,
+  `lastName` varchar(45) NOT NULL,
+  `graduationYear` int(11) NOT NULL,
+  `dateInserted` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `dateUpdated` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
