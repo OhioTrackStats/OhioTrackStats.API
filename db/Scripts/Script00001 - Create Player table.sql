@@ -3,7 +3,7 @@
   `firstName` varchar(45) NOT NULL,
   `lastName` varchar(45) NOT NULL,
   `graduationYear` int(11) NOT NULL,
-  `gender` bit NOT NULL,
+  `gender` int(11) NOT NULL,
   `dateInserted` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `dateUpdated` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)

@@ -1,10 +1,8 @@
 ﻿CREATE TABLE `event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `maleEvent` BIT NOT NULL,
-  `femaleEvent` BIT NOT NULL,
-  `runningEvent` BIT NOT NULL,
-  `relayEvent` BIT NOT NULL,
+  `gender` int NOT NULL,
+  `eventType` BIT NOT NULL,
   `sortOrder` INT NOT NULL,
   `dateInserted` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `dateUpdated` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
