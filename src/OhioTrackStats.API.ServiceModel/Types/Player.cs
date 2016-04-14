@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using ServiceStack.DataAnnotations;
 
 namespace OhioTrackStats.API.ServiceModel.Types
 {
@@ -6,7 +8,10 @@ namespace OhioTrackStats.API.ServiceModel.Types
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int GradationYear { get; set; }
+        public int GraduationYear { get; set; }
         public Gender Gender { get; set; }
+
+        [Reference]
+        public List<Membership> Memberships { get; set; }
     }
 }

@@ -35,11 +35,11 @@ namespace OhioTrackStats.API.ServiceInterface
             return new HttpResult(HttpStatusCode.Created);
         }
 
-        public static void AddPlayers(IDbConnection db)
+        public static void SeedData(IDbConnection db)
         {
-            db.Insert(new Player {Id = 1, FirstName = "Tommie", LastName = "Kurtz", Gender = Gender.Female, GradationYear = 2019, DateInserted = DateTime.UtcNow, DateUpdated = DateTime.UtcNow});
-            db.Insert(new Player {Id = 2, FirstName = "Matt", LastName = "Butt", Gender = Gender.Male, GradationYear = 2017, DateInserted = DateTime.UtcNow, DateUpdated = DateTime.UtcNow});
-            db.Insert(new Player {Id = 3, FirstName = "Joey", LastName = "Kurtz", Gender = Gender.Male, GradationYear = 2020, DateInserted = DateTime.UtcNow, DateUpdated = DateTime.UtcNow});
+            db.Insert(new Player {FirstName = "Tommie", LastName = "Kurtz", Gender = Gender.Female, GraduationYear = 2019});
+            db.Insert(new Player {FirstName = "Matt", LastName = "Butt", Gender = Gender.Male, GraduationYear = 2017});
+            db.Insert(new Player {FirstName = "Joey", LastName = "Kurtz", Gender = Gender.Male, GraduationYear = 2020});
         }
     }
 }

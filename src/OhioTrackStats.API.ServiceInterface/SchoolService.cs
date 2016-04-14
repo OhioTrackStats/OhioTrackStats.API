@@ -16,10 +16,10 @@ namespace OhioTrackStats.API.ServiceInterface
             return AutoQuery.Execute(query, AutoQuery.CreateQuery(query, Request));
         }
 
-        public static void AddSchools(IDbConnection db)
+        public static void SeedData(IDbConnection db)
         {
-            db.Insert(new School { Id = 1, Name = "Dover High School", City = "Dover", FemaleEnrollment = 150, MaleEnrollment = 150, DateInserted = DateTime.UtcNow, DateUpdated = DateTime.UtcNow});
-            db.Insert(new School { Id = 2, Name = "Cloverleaf High School", City = "Lodi", FemaleEnrollment = 125, MaleEnrollment = 125, DateInserted = DateTime.UtcNow, DateUpdated = DateTime.UtcNow });
+            db.Insert(new School { Name = "Dover High School", City = "Dover", FemaleEnrollment = 150, MaleEnrollment = 150});
+            db.Insert(new School { Name = "Cloverleaf High School", City = "Lodi", FemaleEnrollment = 125, MaleEnrollment = 125});
         }
     }
 }
