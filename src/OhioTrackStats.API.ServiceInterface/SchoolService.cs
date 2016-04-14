@@ -25,7 +25,7 @@ namespace OhioTrackStats.API.ServiceInterface
 
         public object Delete(DeleteSchool request)
         {
-            Db.DeleteById<Player>(request.SchoolId);
+            Db.DeleteById<Player>(request.Id);
             return new HttpResult(HttpStatusCode.OK);
         }
 
