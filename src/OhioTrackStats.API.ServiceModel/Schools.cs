@@ -14,10 +14,10 @@ namespace OhioTrackStats.API.ServiceModel
         public School School { get; set; }
     }
 
-    [Route("/schools/{SchoolId}", HttpMethods.Delete)]
+    [Route("/schools/{id}", HttpMethods.Delete)]
     public class DeleteSchool
     {
-        public int SchoolId { get; set; }
+        public int Id { get; set; }
     }
 
     [Route("/schools", HttpMethods.Post)]
