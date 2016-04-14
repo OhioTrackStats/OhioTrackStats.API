@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Net;
 using OhioTrackStats.API.ServiceModel;
 using OhioTrackStats.API.ServiceModel.Types;
 using ServiceStack;
@@ -15,6 +16,25 @@ namespace OhioTrackStats.API.ServiceInterface
         {
             return AutoQuery.Execute(query, AutoQuery.CreateQuery(query, Request));
         }
+
+        public object Put(UpdateSchool request)
+        {
+            Db.Update(request.School);
+            return new HttpResult(HttpStatusCode.OK);
+        }
+
+        public object Delete(DeleteSchool request)
+        {
+            Db.DeleteById<Player>(request.SchoolId);
+            return new HttpResult(HttpStatusCode.OK);
+        }
+
+        public object Post(CreateSchool request)
+        {
+            Db.Insert(request.School);
+            return new HttpResult(HttpStatusCode.Created);
+        }
+
 
         public static void SeedData(IDbConnection db)
         {
