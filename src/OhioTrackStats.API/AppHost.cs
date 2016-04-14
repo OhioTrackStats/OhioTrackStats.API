@@ -38,14 +38,41 @@ namespace OhioTrackStats.API
             container.Register<ICacheClient>(new MemoryCacheClient());
             container.Register<IDbConnectionFactory>(c => new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider) { ConnectionFilter = x => new ProfiledDbConnection(x, Profiler.Current) });
 
+            OrmLiteConfig.InsertFilter = (dbCmd, row) =>
+            {
+                var baseModel = row as BaseModel;
+                if (baseModel != null)
+                {
+                    baseModel.DateInserted = DateTime.UtcNow;
+                    baseModel.DateUpdated = DateTime.UtcNow;
+                }
+            };
+
+            OrmLiteConfig.UpdateFilter = (dbCmd, row) =>
+            {
+                var baseModel = row as BaseModel;
+                if (baseModel != null)
+                {
+                    baseModel.DateUpdated = DateTime.UtcNow;
+                }
+            };
+
             using (var db = container.Resolve<IDbConnectionFactory>().Open())
             {
-                db.DropAndCreateTable<Player>();
-                db.DropAndCreateTable<School>();
-                db.DropAndCreateTable<Membership>();
-                PlayerService.AddPlayers(db);
-                SchoolService.AddSchools(db);
-                MembershipService.AddMemberships(db);
+                if (db.CreateTableIfNotExists<Player>())
+                {
+                    PlayerService.SeedData(db);
+                }
+
+                if (db.CreateTableIfNotExists<School>())
+                {
+                    SchoolService.SeedData(db);
+                }
+
+                if (db.CreateTableIfNotExists<Membership>())
+                {
+                    MembershipService.SeedData(db);
+                }
             }
         }
     }

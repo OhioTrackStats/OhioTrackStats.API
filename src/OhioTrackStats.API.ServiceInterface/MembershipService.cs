@@ -16,10 +16,10 @@ namespace OhioTrackStats.API.ServiceInterface
             return AutoQuery.Execute(query, AutoQuery.CreateQuery(query, this.Request));
         }
 
-        public static void AddMemberships(IDbConnection db)
+        public static void SeedData(IDbConnection db)
         {
-            db.Insert(new Membership { Id = 1, Player = db.Select<Player>(x => x.Id == 1).FirstNonDefault(), School = db.Select<School>(x => x.Id == 1).FirstNonDefault(), DateInserted = DateTime.UtcNow, DateUpdated = DateTime.UtcNow });
-            db.Insert(new Membership { Id = 2, Player = db.Select<Player>(x => x.Id == 2).FirstNonDefault(), School = db.Select<School>(x => x.Id == 2).FirstNonDefault(), DateInserted = DateTime.UtcNow, DateUpdated = DateTime.UtcNow });
+            db.Insert(new Membership {PlayerId = 1, SchoolId = 1});
+            db.Insert(new Membership {PlayerId = 2, SchoolId = 1});
         }
     }
 }
