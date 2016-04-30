@@ -4,7 +4,7 @@ using ServiceStack;
 namespace OhioTrackStats.API.ServiceModel
 {
     [Route("/schools", HttpMethods.Get)]
-    public class QuerySchools : QueryBase<School>
+    public class QuerySchools : QueryDb<School>
     {
     }
 
