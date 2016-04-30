@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ServiceStack.DataAnnotations;
 
 namespace OhioTrackStats.API.ServiceModel.Types
@@ -13,5 +12,8 @@ namespace OhioTrackStats.API.ServiceModel.Types
 
         [Reference]
         public List<Membership> Memberships { get; set; }
+
+        [Reference]
+        public List<Stat> Stats { get; set; }
     }
 }

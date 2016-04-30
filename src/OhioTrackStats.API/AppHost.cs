@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Funq;
 using OhioTrackStats.API.ServiceInterface;
 using OhioTrackStats.API.ServiceModel.Types;
 using ServiceStack;
 using ServiceStack.Admin;
 using ServiceStack.Caching;
+using ServiceStack.Configuration;
 using ServiceStack.Data;
-using ServiceStack.Logging;
-using ServiceStack.Logging.Elmah;
 using ServiceStack.MiniProfiler;
 using ServiceStack.MiniProfiler.Data;
 using ServiceStack.OrmLite;
-using ServiceStack.OrmLite.MySql;
 using ServiceStack.Validation;
 
 namespace OhioTrackStats.API
@@ -34,9 +30,12 @@ namespace OhioTrackStats.API
             this.Plugins.Add(new AutoQueryFeature { MaxLimit = 100 });
             this.Plugins.Add(new AdminFeature());
             this.Plugins.Add(new EncryptedMessagesFeature { PrivateKeyXml = privateKeyXml });
+            this.Plugins.Add(new CorsFeature());
+
+            IAppSettings appSettings = new AppSettings();
 
             container.Register<ICacheClient>(new MemoryCacheClient());
-            container.Register<IDbConnectionFactory>(c => new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider) { ConnectionFilter = x => new ProfiledDbConnection(x, Profiler.Current) });
+            container.Register<IDbConnectionFactory>(c => new OrmLiteConnectionFactory(appSettings.Get<string>("Data.ConnectionString", "Server=localhost;Database=otsdb;User Id=sa;Password=Password!;"), SqlServerDialect.Provider) { ConnectionFilter = x => new ProfiledDbConnection(x, Profiler.Current) });
 
             OrmLiteConfig.InsertFilter = (dbCmd, row) =>
             {
@@ -72,6 +71,16 @@ namespace OhioTrackStats.API
                 if (db.CreateTableIfNotExists<Membership>())
                 {
                     MembershipService.SeedData(db);
+                }
+
+                if (db.CreateTableIfNotExists<Event>())
+                {
+                    EventService.SeedData(db);
+                }
+
+                if (db.CreateTableIfNotExists<Stat>())
+                {
+                    StatService.SeedData(db);
                 }
             }
         }

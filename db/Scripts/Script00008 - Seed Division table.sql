@@ -1,6 +1,0 @@
-﻿INSERT INTO `ohiotrackstats`.`division` (`division`, `maleMinimumEnrollment`, `maleMaximumEnrollment`, `femaleMinimumEnrollment`, `femaleMaximumEnrollment`, `year`) VALUES (1, 293, 9999, 287, 9999, 2016);
-INSERT INTO `ohiotrackstats`.`division` (`division`, `maleMinimumEnrollment`, `maleMaximumEnrollment`, `femaleMinimumEnrollment`, `femaleMaximumEnrollment`, `year`) VALUES (2, 151, 292, 147, 286, 2016);
-INSERT INTO `ohiotrackstats`.`division` (`division`, `maleMinimumEnrollment`, `maleMaximumEnrollment`, `femaleMinimumEnrollment`, `femaleMaximumEnrollment`, `year`) VALUES (3, 1, 150, 1, 146, 2016);
-INSERT INTO `ohiotrackstats`.`division` (`division`, `maleMinimumEnrollment`, `maleMaximumEnrollment`, `femaleMinimumEnrollment`, `femaleMaximumEnrollment`, `year`) VALUES (1, 293, 9999, 287, 9999, 2017);
-INSERT INTO `ohiotrackstats`.`division` (`division`, `maleMinimumEnrollment`, `maleMaximumEnrollment`, `femaleMinimumEnrollment`, `femaleMaximumEnrollment`, `year`) VALUES (2, 151, 292, 147, 286, 2017);
-INSERT INTO `ohiotrackstats`.`division` (`division`, `maleMinimumEnrollment`, `maleMaximumEnrollment`, `femaleMinimumEnrollment`, `femaleMaximumEnrollment`, `year`) VALUES (3, 1, 150, 1, 146, 2017);

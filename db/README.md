@@ -1,1 +1,0 @@
-# OhioTrackStats API Database Solution

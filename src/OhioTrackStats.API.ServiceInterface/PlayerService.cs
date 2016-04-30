@@ -10,7 +10,7 @@ namespace OhioTrackStats.API.ServiceInterface
 {
     public class PlayerService : Service
     {
-        public IAutoQuery AutoQuery { get; set; }
+        public IAutoQueryDb AutoQuery { get; set; }
 
         public object Get(QueryPlayers query)
         {

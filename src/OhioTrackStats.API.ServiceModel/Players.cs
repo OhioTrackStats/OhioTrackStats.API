@@ -1,6 +1,5 @@
 ﻿using OhioTrackStats.API.ServiceModel.Types;
 using ServiceStack;
-using ServiceStack.Html;
 
 namespace OhioTrackStats.API.ServiceModel
 {
