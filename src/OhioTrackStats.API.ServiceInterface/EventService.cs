@@ -30,24 +30,24 @@ namespace OhioTrackStats.API.ServiceInterface
 
         public static void SeedData(IDbConnection db)
         {
-            db.Insert(new Event { Name = "100M", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false});
-            db.Insert(new Event { Name = "200M", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
-            db.Insert(new Event { Name = "400M", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
-            db.Insert(new Event { Name = "800M", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
-            db.Insert(new Event { Name = "1600M", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
-            db.Insert(new Event { Name = "3200M", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
-            db.Insert(new Event { Name = "100M Hurdles", IsMale = false, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
-            db.Insert(new Event { Name = "110M Hurdles", IsMale = true, IsFemale = false, IsRunning = true, IsField = false, IsRelay = false });
-            db.Insert(new Event { Name = "300M Hurdles", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
-            db.Insert(new Event { Name = "4x100M Relay", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = true });
-            db.Insert(new Event { Name = "4x200M Relay", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = true });
-            db.Insert(new Event { Name = "4x400M Relay", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = true });
-            db.Insert(new Event { Name = "4x800M Relay", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = true });
-            db.Insert(new Event { Name = "Shot Put", IsMale = true, IsFemale = true, IsRunning = false, IsField = true, IsRelay = false });
-            db.Insert(new Event { Name = "Discus", IsMale = true, IsFemale = true, IsRunning = false, IsField = true, IsRelay = false });
-            db.Insert(new Event { Name = "Long Jump", IsMale = true, IsFemale = true, IsRunning = false, IsField = true, IsRelay = false });
-            db.Insert(new Event { Name = "High Jump", IsMale = true, IsFemale = true, IsRunning = false, IsField = true, IsRelay = false });
-            db.Insert(new Event { Name = "Pole Vault", IsMale = true, IsFemale = true, IsRunning = false, IsField = true, IsRelay = false });
+            db.Insert(new Event { Name = "100M", ShortName = "100m", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false});
+            db.Insert(new Event { Name = "200M", ShortName = "200m", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
+            db.Insert(new Event { Name = "400M", ShortName = "400m", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
+            db.Insert(new Event { Name = "800M", ShortName = "800m", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
+            db.Insert(new Event { Name = "1600M", ShortName = "1600m", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
+            db.Insert(new Event { Name = "3200M", ShortName = "3200m", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
+            db.Insert(new Event { Name = "100M Hurdles", ShortName = "100m-hurdles", IsMale = false, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
+            db.Insert(new Event { Name = "110M Hurdles", ShortName = "110m-hurdles", IsMale = true, IsFemale = false, IsRunning = true, IsField = false, IsRelay = false });
+            db.Insert(new Event { Name = "300M Hurdles", ShortName = "300m-hurdles", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = false });
+            db.Insert(new Event { Name = "4x100M Relay", ShortName = "4x100m-relay", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = true });
+            db.Insert(new Event { Name = "4x200M Relay", ShortName = "4x200m-relay", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = true });
+            db.Insert(new Event { Name = "4x400M Relay", ShortName = "4x400m-relay", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = true });
+            db.Insert(new Event { Name = "4x800M Relay", ShortName = "4x800m-relay", IsMale = true, IsFemale = true, IsRunning = true, IsField = false, IsRelay = true });
+            db.Insert(new Event { Name = "Shot Put", ShortName = "shot-put", IsMale = true, IsFemale = true, IsRunning = false, IsField = true, IsRelay = false });
+            db.Insert(new Event { Name = "Discus", ShortName = "discus", IsMale = true, IsFemale = true, IsRunning = false, IsField = true, IsRelay = false });
+            db.Insert(new Event { Name = "Long Jump", ShortName = "long-jump", IsMale = true, IsFemale = true, IsRunning = false, IsField = true, IsRelay = false });
+            db.Insert(new Event { Name = "High Jump", ShortName = "high-jump", IsMale = true, IsFemale = true, IsRunning = false, IsField = true, IsRelay = false });
+            db.Insert(new Event { Name = "Pole Vault", ShortName = "pole-vault", IsMale = true, IsFemale = true, IsRunning = false, IsField = true, IsRelay = false });
         }
     }
 }
