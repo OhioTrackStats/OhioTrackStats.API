@@ -5,7 +5,7 @@ namespace OhioTrackStats.API.ServiceModel.Types
     public class Event : BaseModel
     {
         public string Name { get; set; }
-        public string ShortName => this.Name.RemoveAllWhiteSpace();
+        public string ShortName => this.Name.ToLower().Replace(" ", "-");
         public bool IsMale { get; set; }
         public bool IsFemale { get; set; }
         public bool IsRunning { get; set; }
