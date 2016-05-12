@@ -6,7 +6,12 @@ namespace OhioTrackStats.API.ServiceModel
     [Route("/events", HttpMethods.Get)]
     public class QueryEvents : QueryDb<Event>
     {
-        public Gender Gender { get; set; }
+        public int? Id { get; set; }
+        public bool? IsMale { get; set; }
+        public bool? IsFemale { get; set; }
+        public bool? IsRunning { get; set; }
+        public bool? IsField { get; set; }
+        public bool? IsRelay { get; set; }
     }
 
     [Route("/events/{id}", HttpMethods.Delete)]

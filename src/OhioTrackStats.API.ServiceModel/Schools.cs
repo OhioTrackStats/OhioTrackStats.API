@@ -6,6 +6,9 @@ namespace OhioTrackStats.API.ServiceModel
     [Route("/schools", HttpMethods.Get)]
     public class QuerySchools : QueryDb<School>
     {
+        public int? Id { get; set; }
+        public string Name { get; set; }
+        public string City { get; set; }
     }
 
     [Route("/schools", HttpMethods.Put)]
