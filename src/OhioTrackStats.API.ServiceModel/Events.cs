@@ -6,6 +6,7 @@ namespace OhioTrackStats.API.ServiceModel
     [Route("/events", HttpMethods.Get)]
     public class QueryEvents : QueryDb<Event>
     {
+        public Gender Gender { get; set; }
     }
 
     [Route("/events/{id}", HttpMethods.Delete)]
