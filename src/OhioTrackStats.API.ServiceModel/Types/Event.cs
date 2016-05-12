@@ -1,8 +1,11 @@
-﻿namespace OhioTrackStats.API.ServiceModel.Types
+﻿using ServiceStack.Support.Markdown;
+
+namespace OhioTrackStats.API.ServiceModel.Types
 {
     public class Event : BaseModel
     {
         public string Name { get; set; }
+        public string ShortName => this.Name.RemoveAllWhiteSpace();
         public bool IsMale { get; set; }
         public bool IsFemale { get; set; }
         public bool IsRunning { get; set; }

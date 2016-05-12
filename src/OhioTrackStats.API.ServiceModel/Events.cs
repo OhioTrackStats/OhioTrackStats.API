@@ -7,6 +7,7 @@ namespace OhioTrackStats.API.ServiceModel
     public class QueryEvents : QueryDb<Event>
     {
         public int? Id { get; set; }
+        public string ShortName { get; set; }
         public bool? IsMale { get; set; }
         public bool? IsFemale { get; set; }
         public bool? IsRunning { get; set; }
