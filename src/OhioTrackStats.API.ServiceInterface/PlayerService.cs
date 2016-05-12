@@ -37,9 +37,9 @@ namespace OhioTrackStats.API.ServiceInterface
 
         public static void SeedData(IDbConnection db)
         {
-            db.Insert(new Player {FirstName = "Tommie", LastName = "Kurtz", Gender = Gender.Female, GraduationYear = 2019});
-            db.Insert(new Player {FirstName = "Matt", LastName = "Butt", Gender = Gender.Male, GraduationYear = 2017});
-            db.Insert(new Player {FirstName = "Joey", LastName = "Kurtz", Gender = Gender.Male, GraduationYear = 2020});
+            db.Insert(new Player {FirstName = "Tommie", LastName = "Kurtz", IsMale = false, IsFemale = true, GraduationYear = 2019});
+            db.Insert(new Player {FirstName = "Matt", LastName = "Butt", IsMale = true, IsFemale = false, GraduationYear = 2017});
+            db.Insert(new Player {FirstName = "Joey", LastName = "Kurtz", IsMale = true, IsFemale = false, GraduationYear = 2020});
         }
     }
 }
