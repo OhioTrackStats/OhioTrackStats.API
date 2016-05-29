@@ -11,8 +11,5 @@ namespace OhioTrackStats.API.ServiceModel.Types
         public int FemaleMinimumEnrollment { get; set; }
         public int FemaleMaximumEnrollment { get; set; }
         public int Year { get; set; }
-
-        [Reference]
-        public List<School> Schools { get; set; }
     }
 }
