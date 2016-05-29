@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Principal;
 using Funq;
 using OhioTrackStats.API.ServiceInterface;
 using OhioTrackStats.API.ServiceModel.Types;
@@ -43,7 +44,9 @@ namespace OhioTrackStats.API
                 if (baseModel != null)
                 {
                     baseModel.DateInserted = DateTime.UtcNow;
+                    baseModel.InsertedBy = WindowsIdentity.GetCurrent().Name;
                     baseModel.DateUpdated = DateTime.UtcNow;
+                    baseModel.UpdatedBy = WindowsIdentity.GetCurrent().Name;
                 }
             };
 
@@ -53,6 +56,7 @@ namespace OhioTrackStats.API
                 if (baseModel != null)
                 {
                     baseModel.DateUpdated = DateTime.UtcNow;
+                    baseModel.UpdatedBy = WindowsIdentity.GetCurrent().Name;
                 }
             };
 
@@ -81,6 +85,11 @@ namespace OhioTrackStats.API
                 if (db.CreateTableIfNotExists<Stat>())
                 {
                     StatService.SeedData(db);
+                }
+
+                if (db.CreateTableIfNotExists<Division>())
+                {
+                    DivisionService.SeedData(db);
                 }
             }
         }

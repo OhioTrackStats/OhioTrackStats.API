@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Divisions.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Memberships.cs" />
     <Compile Include="Players.cs" />

@@ -8,7 +8,11 @@ namespace OhioTrackStats.API.ServiceModel.Types
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int GraduationYear { get; set; }
+
+        [Index(false)]
         public bool IsMale { get; set; }
+
+        [Index(false)]
         public bool IsFemale { get; set; }
 
         [Reference]

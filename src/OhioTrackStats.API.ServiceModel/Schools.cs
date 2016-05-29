@@ -9,6 +9,7 @@ namespace OhioTrackStats.API.ServiceModel
         public int? Id { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
+        public Division Division { get; set; }
     }
 
     [Route("/schools", HttpMethods.Put)]

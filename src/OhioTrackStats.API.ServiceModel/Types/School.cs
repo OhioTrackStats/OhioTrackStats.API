@@ -7,7 +7,11 @@ namespace OhioTrackStats.API.ServiceModel.Types
     {
         public string Name { get; set; }
         public string City { get; set; }
+
+        [Index(false)]
         public int FemaleEnrollment { get; set; }
+
+        [Index(false)]
         public int MaleEnrollment { get; set; }
 
         [Reference]
